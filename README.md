@@ -1,1 +1,1 @@
-# store-rest-api
+flask and rest api used for deployment at Heroku
