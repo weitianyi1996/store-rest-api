@@ -2,3 +2,7 @@ cp -r ./python-DataScientist-notes/Flask-RESTful-SQLAlchemy/code  ./store-rest-a
 
 mv -v ./store-rest-api/code/* ./store-rest-api/
 
+
+deployment:
+push to remote github repo
+add config: uwsgi, requirements, run, runtime, Procfile
