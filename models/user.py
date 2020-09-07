@@ -5,7 +5,7 @@ from db import db
 class UserModel(db.Model):
     __tablename__ = "users"
 
-    # 3 columns SQLAlchemt must match instance properties(self.id, username, password)
+    # 3 columns SQLAlchemy must match instance properties(self.id, username, password)
     # instance object/property - SQLAlchemy
     id = db.Column(db.Integer, primary_key=True)  # auto incremental
     username = db.Column(db.String(80))

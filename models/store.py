@@ -9,7 +9,7 @@ class StoreModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
 
-    items = db.relationship("ItemModel")  # this is a list, tell SQLAlchemy there is relationship between these two (tables)
+    items = db.relationship("ItemModel", lazy='dynamic')  # this is a list, tell SQLAlchemy there is relationship between these two (tables)
 
     def __init__(self, name):  # later be used either inserted or updated to database
         self.name = name
