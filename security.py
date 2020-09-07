@@ -1,11 +1,5 @@
 from models.user import UserModel
 
-users = [
-    UserModel(1, "Toby", "password123")
-]
-
-username_mapping = {u.username: u for u in users}
-userid_mapping = {u.id: u for u in users}
 
 
 def authenticate(username, password):
