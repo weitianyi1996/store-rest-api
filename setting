@@ -1,1 +1,4 @@
 cp -r ./python-DataScientist-notes/Flask-RESTful-SQLAlchemy/code  ./store-rest-api  # .-current root
+
+mv -v ./store-rest-api/code/* ./store-rest-api/
+
