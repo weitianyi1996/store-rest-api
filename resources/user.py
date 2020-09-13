@@ -41,5 +41,21 @@ class UserRegister(Resource):
         return {"message": "GREAT! User has been signed up."}
 
 
+class User(Resource):
+    @classmethod
+    def get(cls, user_id):
+        user = UserModel.find_by_userid(user_id)
+        if not user:
+            return {"message": "User not found o."}, 404
+        return user.json()
+
+    @classmethod
+    def delete(cls, user_id):
+        user = UserModel.find_by_userid(user_id)
+        if not user:
+            return {"message": "User not found o."}, 404
+        user.delete_from_db()
+        return {"message": "User Deleted"}, 200
+
 
 

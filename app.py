@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_jwt import JWT
 
 from security import authenticate, identity
-from resources.user import UserRegister
+from resources.user import UserRegister, User
 
 from resources.item import Item, ItemList
 from resources.store import Store, StoreList
@@ -34,7 +34,7 @@ api.add_resource(ItemList, "/items")  # call API- decorator  http://127.0.0.1:50
 api.add_resource(UserRegister, "/register")  # call API- decorator  http://127.0.0.1:5000/register
 api.add_resource(Store, "/store/<string:name>")  # call API- decorator  http://127.0.0.1:5000/register
 api.add_resource(StoreList, "/stores")  # call API- decorator  http://127.0.0.1:5000/register
-
+api.add_resource(User, "/user/<int:user_id>")
 
 # make sure it's only running app.py
 # if imported by other file, __name__ = item
