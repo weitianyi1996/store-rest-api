@@ -38,8 +38,9 @@ class ItemModel(db.Model):
         # using SQLAlchemy-difference: SQLite using SQL(SELECT*FROM A), SQLAlchemy using query/filter...
         # return an ItemModel object(because of cls)
         # row in db -transformed to- class object with properties(self.name, self.price)
-        item_json = cls.query.filter_by(name=name).first().json()  # SELECT*FROM items WHERE name=name LIMIT 1
-        return {"item": item_json}
+        if cls.query.filter_by(name=name).first():
+            item_json = cls.query.filter_by(name=name).first().json()  # SELECT*FROM items WHERE name=name LIMIT 1
+            return {"item": item_json}
 
     def save_to_db(self):  # !this is not going to return anything-create object instance-item.insert()
         # connection = sqlite3.connect("data.db")

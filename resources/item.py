@@ -49,7 +49,7 @@ class Item(Resource):
         except:
             return {"message": " NOTICE! An error occurred while inserting!"}, 500  # Internal Server Error
 
-        return item, 201  # 201 creating status
+        return item.json(), 201  # 201 creating status
 
     def delete(self, name):
         # global items  # otherwise will be local variable and cant use variable to define itself
